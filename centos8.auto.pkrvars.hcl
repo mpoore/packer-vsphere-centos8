@@ -16,7 +16,7 @@ vm_os_vendor                    = "CentOS"
 vm_os_version                   = "8"
 
 # VM Hardware Settings
-vm_hardware_version             = 20
+vm_hardware_version             = 19
 vm_firmware                     = "efi-secure"
 vm_cpu_sockets                  = 1
 vm_cpu_cores                    = 1
