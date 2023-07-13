@@ -6,7 +6,7 @@
 # ----------------------------------------------------------------------------
 
 # ISO Settings
-os_iso_file                     = "CentOS-Stream-8-20230710.0-x86_64-dvd1.iso"
+os_iso_file                     = "CentOS-Stream-8-x86_64-latest-dvd1.iso"
 os_iso_path                     = "os/centos/8"
 
 # OS Meta Data

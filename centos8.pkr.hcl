@@ -94,9 +94,8 @@ source "vsphere-iso" "centos8" {
     # Boot and Provisioner
     boot_order                  = var.vm_boot_order
     boot_wait                   = var.vm_boot_wait
-    boot_command                = [ "up", "wait", "e", "<down><down><end><wait>",
-                                    "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
-                                    "quiet text inst.ks=cdrom",
+    boot_command                = [ "up", "e", "<down><down><end><wait>",
+                                    "text inst.ks=cdrom",
                                     "<enter><wait><leftCtrlOn>x<leftCtrlOff>" ]
     ip_wait_timeout             = var.vm_ip_timeout
     communicator                = "ssh"

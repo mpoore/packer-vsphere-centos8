@@ -3,7 +3,7 @@
 # COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# RedHat Linux 8
+# CentOS Stream 8
 
 ### Installs from the first attached CD-ROM/DVD on the system.
 cdrom
@@ -27,6 +27,7 @@ keyboard ${vm_guestos_keyboard}
 ### --bootproto	  method to obtain networking configuration for device (default dhcp)
 ### --noipv6	  disable IPv6 on this device
 ###
+### network  --bootproto=static --ip=172.16.11.200 --netmask=255.255.255.0 --gateway=172.16.11.200 --nameserver=172.16.11.4 --hostname centos-linux-8
 network --bootproto=dhcp
 
 ### Lock the root account.
@@ -34,7 +35,7 @@ rootpw --lock
 
 ### The selected profile will restrict root login.
 ### Add a user that can login and escalate privileges.
-user --name=${build_username} --password=${build_password} --groups=wheel
+user --name=${build_username} --iscrypted --password=${build_password_encrypted} --groups=wheel
 
 ### Configure firewall settings for the system.
 ### --enabled	reject incoming connections that are not in response to outbound requests
@@ -54,7 +55,7 @@ selinux --permissive
 timezone ${vm_guestos_timezone}
 
 ### Sets how the boot loader should be installed.
-bootloader --location=mbr --append="rhgb quiet crashkernel=auto"
+bootloader --location=mbr
 
 ### Initialize any invalid partition tables found on disks.
 zerombr

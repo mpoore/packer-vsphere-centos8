@@ -40,6 +40,11 @@ variable "build_password" {
     description = "Password for the non-administrative user"
     sensitive   = true
 }
+variable "build_password_encrypted" {
+    type        = string
+    description = "Encrypted password for the non-administrative user"
+    sensitive   = true
+}
 variable "build_configmgmt_user" {
     type        = string
     description = "Name of the user to be used by Configuration Management tooling"
@@ -150,7 +155,7 @@ variable "vm_firmware" {
 variable "vm_hardware_version" {
     type        = number
     description = "Version of VM hardware to use (e.g. '18' or '19' etc)"
-    default     = 20
+    default     = 19
 }
 variable "vm_boot_order" {
     type        = string
