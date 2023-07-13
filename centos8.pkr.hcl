@@ -22,7 +22,7 @@ packer {
 #                              Local Variables                               #
 # -------------------------------------------------------------------------- #
 locals { 
-    build_version               = formatdate("YY.MM (DD-hhmm)", timestamp())
+    build_version               = formatdate("YY.MM (DD.hhmm)", timestamp())
     ks_content                  = {
                                     "ks.cfg" = templatefile("${abspath(path.root)}/config/ks.pkrtpl.hcl", {
                                         build_username            = var.build_username
@@ -67,7 +67,7 @@ source "vsphere-iso" "centos8" {
 
     # Virtual Machine
     guest_os_type               = var.vm_guestos_type
-    vm_name                     = "${ source.name }-${ var.build_branch }-${ local.build_version }"
+    vm_name                     = "${ source.name }-${ var.build_branch }"
     notes                       = local.vm_description
     firmware                    = var.vm_firmware
     CPUs                        = var.vm_cpu_sockets
