@@ -4,4 +4,4 @@
 
 ## Adding hashicorp repository
 echo 'Adding HashiCorp repository ...'
-wget -O- https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo | tee /etc/yum.repos.d/hashicorp.repo &>/dev/null
+wget -O- https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo &>/dev/null | tee /etc/yum.repos.d/hashicorp.repo &>/dev/null

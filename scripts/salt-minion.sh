@@ -23,4 +23,4 @@ OnBootSec=2min
 [Install]
 WantedBy=timers.target
 EOF
-systemctl enable salt-minion.timer
+systemctl enable salt-minion.timer &>/dev/null
