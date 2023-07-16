@@ -12,6 +12,8 @@ echo 'Executing final cleanup tasks ...'
 if [ -f /etc/udev/rules.d/70-persistent-net.rules ]; then
     rm -f /etc/udev/rules.d/70-persistent-net.rules
 fi
+# Network scripts
+rm -f /etc/sysconfig/network-scripts/*
 # Temp directories
 rm -rf /tmp/*
 rm -rf /var/tmp/*
